@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+    <title>커피 추천</title>
+    <head>
+		<title>Astral by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#recommendationPopup {
+				display: none;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: white;
+				padding: 20px;
+				border: 1px solid #ccc;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				z-index: 9999;
+			}
+			#recommendationPopup button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+		</style>
+		
+	</head>
+    <!-- 추가적인 head 내용이 필요하다면 여기에 추가할 수 있습니다 -->
+    <body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#mega" class="icon solid fa-coffee"><span>mega</span></a>
+						<a href="#compose" class="icon solid fa-compass"><span>compose</span></a>
+						<a href="#paik" class="icon solid fa-parking"><span>paik</span></a>
+						<a href="#ediya" class="icon brands fa-etsy"><span>ediya</span></a>
+						<a href="#ice" class="icon solid fa-snowman"><span>ice</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- 메가커피 -->
+							<article id="mega" class="panel intro">
+								<header>
+									<h1>메가 커피</h1>
+									<p>HOT 디카페인 바닐라 라떼</p>
+                                    <p>One size / 20oz
+                                        <br>1회 제공량 83.0kcal | 카페인 12.2mg
+                                        <br>디카페인 아메리카노에 바닐라의 부드러운 향과 달콤함을 조화롭게 담아낸 커피</p>
+								</header>
+								<a href="#compose" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="images/mega_vanilla.jpg" alt="" />
+								</a>
+							</article>
+
+						<!-- 컴포즈커피 -->
+							<article id="compose" class="panel intro">
+								<header>
+									<h1>컴포즈 커피</h1>
+									<p>HOT 카페라떼</p>
+                                    <p>One size / 60ml
+                                        <br>1회 제공량 204.0kcal | 카페인 208mg
+                                        <br>진한 에스프레소와 부드러운 우유가 어우러져 고소한 풍미를 완성한 라떼</p>
+								</header>
+								<a href="#paik" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="images/compose_cafelatte.jpg" alt="" />
+								</a>
+							</article>
+
+                            <!-- 빽다방 -->
+                            <article id="paik" class="panel intro">
+								<header>
+									<h1>빽다방</h1>
+									<p>HOT 카페모카</p>
+                                    <p>One size / 350ml
+                                        <br>1회 제공량 319.0kcal | 카페인 237.0mg
+                                        <br>초콜릿과 진한 에스프레소, 부드러운 우유가 더해진 달콤한 맛의 커피</p>
+								</header>
+								<a href="#ediya" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="images/paik_cafemoca.png" alt="" />
+								</a>
+							</article>
+
+                            <!-- 이디야커피 -->
+                            <article id="ediya" class="panel intro">
+								<header>
+									<h1>이디야 커피</h1>
+									<p>HOT 에스프레소</p>
+                                    <p>One size / 30ml
+                                        <br>1회 제공량 8.0kcal | 카페인 116mg
+                                        <br>정통 이탈리안 방식으로 고압을 이용하여 빠르게 추출된 커피</p>
+								</header>
+								<a href="#mega" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="images/ediya_espresso.png" alt="" />
+								</a>
+							</article>
+
+							<article id="ice" class="panel intro">
+								<header>
+									<h1>차가운 커피</h1>
+									<p>코코넛 커피 스무디</p>
+                                    <p>One size / 20oz
+                                        <br>1회 제공량 746.5kcal | 카페인 173.8mg
+                                        <br>바삭하고 고소한 코코넛 칩을 올리고 쌉싸름한 커피와 달콤한 코코넛이 조화로운 스무디</p>
+								</header>
+								<a href="#mega" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="images/mega_coconutcoffee.png" alt="" />
+								</a>
+							</article>
+
+							<div style="text-align: center; margin-top: 20px;">
+								<button onclick="showBrandSelection()">해당 브랜드 선택하기</button>
+							</div>
+							<div id="recommendationPopup">
+								<p style="font-size: 18px; font-weight: bold;">맛있게 드세요!</p>
+								<button onclick="closePopup()">네</button>
+							</div>
+
+
+
+						
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function showBrandSelection() {
+					document.getElementById("recommendationPopup").style.display = "block";
+				}
+				function closePopup() {
+                document.getElementById("recommendationPopup").style.display = "none";
+            }
+			</script>
+
+	</body>
+</html>
